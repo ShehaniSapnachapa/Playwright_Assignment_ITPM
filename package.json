@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^25.1.0",
+    "@types/xlsx": "^0.0.35"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
