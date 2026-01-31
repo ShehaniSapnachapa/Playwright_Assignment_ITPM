@@ -46,7 +46,7 @@ test.describe('Singlish to Sinhala Tests', () => {
     test(`${id} - ${testCaseName}`, async ({ page }) => {
       await page.goto('https://www.swifttranslator.com/');
 
-      // ✅ Correct selectors
+      // Correct selectors
       const inputField = page.locator(
         'textarea[placeholder="Input Your Singlish Text Here."]'
       );
