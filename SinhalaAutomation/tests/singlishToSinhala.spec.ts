@@ -15,7 +15,7 @@ function normalize(text?: string) {
 // Excel file path
 const excelFilePath = path.resolve(__dirname, '../../IT23390614.xlsx');
 
-// Interface matching your real Excel columns
+// Interface matching for real Excel columns
 interface TestCase {
   'TC ID': string;
   'Test case name': string;
@@ -46,7 +46,7 @@ test.describe('Singlish to Sinhala Tests', () => {
     test(`${id} - ${testCaseName}`, async ({ page }) => {
       await page.goto('https://www.swifttranslator.com/');
 
-      // ✅ Correct selectors
+      // Correct selectors
       const inputField = page.locator(
         'textarea[placeholder="Input Your Singlish Text Here."]'
       );
