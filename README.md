@@ -25,9 +25,9 @@ Playwright testing framework
 
 ## Installation
 
-1. Clone the repositary:
-
 ```bash
+
+1. Clone the repositary:
 git clone <your-github-repo-link>
 cd IT23390614/SinhalaAutomation
 
