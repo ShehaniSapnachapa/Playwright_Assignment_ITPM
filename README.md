@@ -4,6 +4,8 @@
 This project automates functional testing of the Singlish-to-Sinhala transliteration system available at Swift Translator.
 The automation verifies translation accuracy, covering positive, negative, and UI test scenarios, as required by IT3040 – ITPM Assignment 1.
 
+```bash
+
 The project:
 -- Reads test cases from 'IT23390614.xlsx'.
 -- Automates input and captures the output in real-time.
@@ -25,9 +27,10 @@ Playwright testing framework
 
 ## Installation
 
+```bash
+
 1. Clone the repositary:
 
-```bash
 git clone <your-github-repo-link>
 cd IT23390614/SinhalaAutomation
 
