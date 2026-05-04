@@ -6,6 +6,7 @@
     "esModuleInterop": true,
     "strict": true,
     "types": ["node"],
+    "rootDir": "SinhalaAutomation/tests",
     "outDir": "dist"
   },
   "include": ["SinhalaAutomation/tests/**/*.ts"]

@@ -1,0 +1,17 @@
+{
+  "name": "it23390614-sinhala-automation",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:report": "npx playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "@types/node": "^20.0.0"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  }
+}

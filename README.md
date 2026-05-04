@@ -1,51 +1,105 @@
-# IT23390614 – Playwright-project-assignment
+# IT23390614 – Singlish-to-Sinhala Transliteration Automation
 
-# Overview
-This project automates functional testing of the Singlish-to-Sinhala transliteration system available at Swift Translator.
-The automation verifies translation accuracy, covering positive, negative, and UI test scenarios, as required by IT3040 – ITPM Assignment 1.
+## Overview
 
-```bash
+This project automates **negative test cases** for the Chat Sinhala transliteration function available at:
 
-The project:
--- Reads test cases from 'IT23390614.xlsx'.
--- Automates input and captures the output in real-time.
--- Compares actual output with expected output.
--- Writes results into 'IT23390614_results.xlsx'.
+> **https://www.pixelssuite.com/chat-translator**
+
+It is submitted as Assignment 1 for IT3040 – ITPM (Year 3, Semester 1).
+
+The automation:
+- Reads 50 negative test cases from `Test_Cases.xlsx`
+- Types each input into the live transliteration tool
+- Clicks **Transliterate** and captures the actual Sinhala output
+- Compares the actual output against the expected output
+- Writes `Actual output` and `Status` (Pass/Fail) back into `Testing_results.xlsx`
+
+---
 
 ## Folder Structure
+
+```
 IT23390614/
- ─ SinhalaAutomation/ # Playwright scripts and configuration
- ─ IT23390614.xlsx # Input Excel file with test cases
- ─ IT23390614_results.xlsx # Output Excel file with results
- ─ README.md # This file
+├── SinhalaAutomation/
+│   ├── tests/
+│   │   └── singlishToSinhala.spec.ts   # Main Playwright test file
+│   ├── playwright.config.ts             # Playwright configuration
+│   ├── package.json                     # Node.js dependencies
+│   └── test-results/                    # Generated test artifacts (screenshots, videos)
+├── Test_Cases.xlsx                      # Input: 50 negative test cases
+├── Testing_results.xlsx                 # Output: generated after running tests
+└── README.md
+```
+
+---
 
 ## Prerequisites
 
-Node.js (version 18 or higher)
-npm (version 9 or higher)
-Playwright testing framework
+- **Node.js** v18 or higher — https://nodejs.org
+- **npm** v9 or higher (bundled with Node.js)
+
+---
 
 ## Installation
 
+### 1. Clone the repository
+
 ```bash
+git clone https://github.com/ShehaniSapnachapa/Playwright_Assignment_ITPM.git
+cd Playwright_Assignment_ITPM/SinhalaAutomation
+```
 
-1. Clone the repositary:
+### 2. Install dependencies
 
-git clone <your-github-repo-link>
-cd IT23390614/SinhalaAutomation
-
-2. Install dependencies:
-
+```bash
 npm install
-npx playwright install
+```
 
-3. Run Tests
-    Run all tests: npx playwright test
-    Run a specific test: npx playwright test -g "Pos_Fun_0001"
+### 3. Install Playwright browsers (one-time)
 
-Excel Test Cases
-    Input: IT23390614.xlsx contains all test cases (positive, negative, UI) following the standard template.
-    Output: IT23390614_results.xlsx is generated automatically after running tests.
+```bash
+npx playwright install chromium
+```
 
+---
+
+## Running the Tests
+
+From inside the `SinhalaAutomation/` folder:
+
+```bash
+# Run all 50 test cases (headless by default)
+npx playwright test
+
+# Run with browser visible
+npx playwright test --headed
+
+# Run a single test case by its TC ID
+npx playwright test -g "Neg_0001"
+
+# View the HTML report after the run
+npx playwright show-report test-results/html-report
+```
+
+---
+
+## Results
+
+After the test run completes:
+- `Testing_results.xlsx` is created in the **root** (`IT23390614/`) folder
+- It contains all original columns plus `Actual output` and `Status` filled in automatically
+- Screenshots and videos for any failed tests are saved in `SinhalaAutomation/test-results/artifacts/`
+
+---
+
+## Excel File Format
+
+`Test_Cases.xlsx` follows the assignment template with these columns:
+
+| TC ID | Test case name | Input Length type | Input | Expected output | Actual output | Status | ... |
+|-------|---------------|-------------------|-------|-----------------|---------------|--------|-----|
+
+All 50 test cases are **negative** (TC IDs begin with `Neg_`) and cover all 24 Singlish input types defined in Appendix 1 of the assignment.
 
 
